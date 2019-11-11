@@ -1,4 +1,4 @@
-# UsersRemoving-for-GC
+# UsersRemoving for GC
 Это UserScript, который удаляет пользователей GetCourse по сегменту.
 
 ## Использование

@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name UsersRemoving for GC
-// @description Удаляет пользователей по сегменту
+// @name GetCourseAdvanced
+// @description Скрипт предназначен для администраторов школ на платформе GetCourse. Добавляет дополнительный функционал.
 // @author      Dmitry Space
 // @version     1.0
 // @date        2019-11-11

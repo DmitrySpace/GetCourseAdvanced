@@ -1,7 +1,7 @@
-# UsersRemoving for GC
+# GetCourseAdvanced
 Это UserScript, который удаляет пользователей GetCourse по сегменту.
 
-![](https://github.com/DmitrySpace/UsersRemoving-for-GC/raw/master/ezgif-5-ba48b3d37a84.gif)
+![](https://github.com/DmitrySpace/GetCourseAdvanced/raw/master/img/userdeletion.gif)
 
 ## Установка
 
@@ -21,7 +21,7 @@
 
 ### 3. Подключение скрипта
 
-1. [Откройте скрипт](https://github.com/DmitrySpace/UsersRemoving-for-GC/raw/master/UsersRemoving%20for%20GC.user.js)
+1. [Откройте скрипт](https://github.com/DmitrySpace/GetCourseAdvanced/raw/master/GetCourseAdvanced.user.js)
 2. Нажмите на кнопку «Установить»
 3. В открывшейся вкладке подтвердите установку
 4. Дождитесь завершения установки

@@ -1,7 +1,7 @@
 # GetCourseAdvanced
-Это UserScript, который удаляет пользователей GetCourse по сегменту.
+Это UserScript, который добавляет дополнительный функционал в админскую часть платформы GetCourse.
 
-![](https://github.com/DmitrySpace/GetCourseAdvanced/raw/master/img/userdeletion.gif)
+![](https://github.com/DmitrySpace/GetCourseAdvanced/raw/master/img/gca.png)
 
 ## Установка
 
@@ -22,6 +22,8 @@
 
 ## Использование
 Рассмотрим использование скрипта на примере удаления пользователей.
+
+![](https://github.com/DmitrySpace/GetCourseAdvanced/raw/master/img/userdeletion.gif)
 
 **1. Перейдите на страницу "Пользователи"**
 

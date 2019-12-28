@@ -23,6 +23,7 @@
     z-index: -1;
     background: #fff;
     box-shadow: 0 5px 20px #00000066;
+    pointer-events: none;
 }
 #gcextcode::before {
     content: " ";
@@ -41,6 +42,7 @@
     position: relative;
     margin-bottom: 15px;
     font-weight: 200;
+    pointer-events: none;
 }
 #gcextcode div {
     width: 1%;
@@ -48,6 +50,7 @@
     position: relative;
     margin: 0 0 20px 0;
     z-index: 1;
+    pointer-events: none;
 }
 #gcextcode div:before {
     content: " ";
@@ -56,6 +59,7 @@
     height: 20px;
     background-color: #ece5e5;
     z-index: -2;
+    pointer-events: none;
 }
 #gcextcode div:after {
     content: " ";
@@ -65,6 +69,7 @@
     background-color: #f19c9c;
     position: absolute;
     z-index: -1;
+    pointer-events: none;
 }
 #gcextcode .btn {
     border-radius: 0;

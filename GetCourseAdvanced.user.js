@@ -244,7 +244,7 @@
                           } else $("#gcextcodee span").html("Удаление: " + (ind + 1) + " / " + parsedata.length);
                         }
                       );
-                    }, 500 * ind);
+                    }, 2000 * ind);
                   })(i);
                 }
               }

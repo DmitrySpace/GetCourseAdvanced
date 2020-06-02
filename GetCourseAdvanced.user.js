@@ -265,7 +265,7 @@
             for (let i = 0; i < parsedata.length; i++) {
               if (parsedata[i] != admin_id) {
                 (function (ind) {
-                  setTimeout(action(parsedata[i], parsedata.length, ind), 500 * ind);
+                  setTimeout(action(parsedata[i], parsedata.length, ind), 2000 * ind);
                 })(i);
               }
             }

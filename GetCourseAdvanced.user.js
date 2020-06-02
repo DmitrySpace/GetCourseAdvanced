@@ -3,7 +3,7 @@
 // @description Скрипт предназначен для администраторов школ на платформе GetCourse. Добавляет дополнительный функционал.
 // @author      Dmitry Space
 // @version     2.3.0
-// @date        2019-12-19
+// @date        2020-06-02
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.12.0/js/md5.min.js
 // @include *://*/*

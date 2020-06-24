@@ -2,7 +2,7 @@
 // @name GetCourseAdvanced
 // @description Скрипт предназначен для администраторов школ на платформе GetCourse. Добавляет дополнительный функционал.
 // @author      Dmitry Space
-// @version     2.4.0
+// @version     2.5.0
 // @date        2020-06-24
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.12.0/js/md5.min.js
@@ -34,13 +34,13 @@
           Вернуть из бана
         </a></li>`).insertAfter("#w0 .btn-group ul.dropdown-menu li:first-child");
 
-        $("#usersdelete").click(function () {
+        $('body').on("click", "#usersdelete", function () {
           getCSV().then(function (csv_href) {
             if (csv_href) file_downloaded(csv_href)
           });
         });
 
-        $("#userssubscribe").click(function () {
+        $('body').on("click", "#userssubscribe", function () {
           var action = function (userid, count_userids, ind) {
             var userlink = "/user/control/user/update/id/" + userid;
             var mailingCategories = new Promise(function (resolve, reject) {
@@ -84,7 +84,7 @@
           });
         });
 
-        $("#usersban").click(function () {
+        $('body').on("click", "#usersban", function () {
           var action = function (userid, count_userids, ind) {
             $.post(
               "/user/control/user/update/id/" + userid, {
@@ -107,7 +107,7 @@
           });
         });
 
-        $("#usersunban").click(function () {
+        $('body').on("click", "#usersunban", function () {
           var action = function (userid, count_userids, ind) {
             $.post(
               "/user/control/user/update/id/" + userid, {

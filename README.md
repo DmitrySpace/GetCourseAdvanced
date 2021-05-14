@@ -1,7 +1,7 @@
 # GetCourseAdvanced
 Это UserScript, который добавляет дополнительный функционал в админскую часть платформы GetCourse.
 
-![](https://github.com/DmitrySpace/GetCourseAdvanced/raw/master/img/gca.png)
+![](https://github.com/DmitrySpace/GiftBox-3D/raw/master/img/GiftBox-3D-preview.jpg)
 
 ## Установка
 

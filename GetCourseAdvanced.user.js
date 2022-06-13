@@ -41,7 +41,7 @@
         });
 
         $('body').on("click", "#userssubscribe", function () {
-          var action = function (userid, count_userids, ind) {
+          var action = function (userid, count_userids, ind, CSRF) {
             var userlink = "/user/control/user/update/id/" + userid;
             var mailingCategories = new Promise(function (resolve, reject) {
               $.ajax({
@@ -66,7 +66,7 @@
                     "save": "Сохранить",
                     "User[type]": "user",
                     "User[subscribe_status]": "all",
-                    rule: `{"type":"usersrule","inverted":0,"className":"app::modules::user::models::rule::UsersRule","params":{"ids":["${userid}"]}}`
+                    "YII_CSRF_TOKEN": CSRF
                   }
                 ),
                 function (data) {
@@ -80,18 +80,24 @@
             });
           };
           getCSV().then(function (csv_href) {
-            if (csv_href) users_universal(csv_href, action)
+            if (csv_href) {
+              getCSRF(admin_id).then(function(CSRF) {
+                if (CSRF) {
+                  users_universal(csv_href, action, CSRF);
+                }
+              });
+            }
           });
         });
 
         $('body').on("click", "#usersban", function () {
-          var action = function (userid, count_userids, ind) {
+          var action = function (userid, count_userids, ind, CSRF) {
             $.post(
               "/user/control/user/update/id/" + userid, {
                 "action": "ban",
                 "User[type]": "user",
                 "User[subscribe_status]": "all",
-                rule: `{"type":"usersrule","inverted":0,"className":"app::modules::user::models::rule::UsersRule","params":{"ids":["${userid}"]}}`
+                "YII_CSRF_TOKEN": CSRF
               },
               function (data) {
                 $("#gcextcode div").width((((ind + 1) * 100) / count_userids) + "%");
@@ -103,18 +109,24 @@
             );
           };
           getCSV().then(function (csv_href) {
-            if (csv_href) users_universal(csv_href, action)
+            if (csv_href) {
+              getCSRF(admin_id).then(function(CSRF) {
+                if (CSRF) {
+                  users_universal(csv_href, action, CSRF);
+                }
+              });
+            }
           });
         });
 
         $('body').on("click", "#usersunban", function () {
-          var action = function (userid, count_userids, ind) {
+          var action = function (userid, count_userids, ind, CSRF) {
             $.post(
               "/user/control/user/update/id/" + userid, {
                 "action": "unban",
                 "User[type]": "user",
                 "User[subscribe_status]": "all",
-                rule: `{"type":"usersrule","inverted":0,"className":"app::modules::user::models::rule::UsersRule","params":{"ids":["${userid}"]}}`
+                "YII_CSRF_TOKEN": CSRF
               },
               function (data) {
                 $("#gcextcode div").width((((ind + 1) * 100) / count_userids) + "%");
@@ -126,7 +138,13 @@
             );
           };
           getCSV().then(function (csv_href) {
-            if (csv_href) users_universal(csv_href, action)
+            if (csv_href) {
+              getCSRF(admin_id).then(function(CSRF) {
+                if (CSRF) {
+                  users_universal(csv_href, action, CSRF);
+                }
+              });
+            }
           });
         });
 
@@ -192,6 +210,17 @@
           return promise;
         }
 
+        function getCSRF(userid) {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: "/user/control/user/update/id/" + userid,
+                    success: function (data) {
+                        var pageDom = $('<div></div>').append($.parseHTML(data));
+                        resolve(pageDom.find("input[name='YII_CSRF_TOKEN']").first().val());
+                    }
+                });
+            });
+        }
 
         function file_downloaded(fileurl) {
           $.ajax({
@@ -255,7 +284,7 @@
           });
         }
 
-        function users_universal(csv_href, action) {
+        function users_universal(csv_href, action, CSRF) {
           $.get(csv_href, function (data) {
             let parsedata = [];
             let newLinebrk = data.split("\n");
@@ -268,7 +297,7 @@
             for (let i = 0; i < parsedata.length; i++) {
               if (parsedata[i] != admin_id) {
                 (function (ind) {
-                  setTimeout(action(parsedata[i], parsedata.length, ind), 2000 * ind);
+                  setTimeout(action(parsedata[i], parsedata.length, ind, CSRF), 2000 * ind);
                 })(i);
               }
             }

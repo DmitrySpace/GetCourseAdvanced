@@ -17,7 +17,7 @@
 
     if (relativeurl.indexOf("/pl/user/user") > -1) {
 
-      $("head").append('<link href="https://gitcdn.link/cdn/DmitrySpace/GetCourseAdvanced/8e7be07d5e337111c6f04a09b5bdf5351627483e/styles.css" rel="stylesheet" type="text/css">');
+      $("head").append('<link href="https://cdn.jsdelivr.net/gh/DmitrySpace/GetCourseAdvanced/styles.css" rel="stylesheet" type="text/css">');
 
       var admin_id = unsafeWindow.accountUserId;
 
